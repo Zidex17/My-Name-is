@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zidex — разработка сайтов и Telegram-ботов</title>
+  <meta name="description" content="Zidex — оператор информационных систем и ресурсов. Создание сайтов, Telegram-ботов, работа с Excel и Word.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2933;
+      background: #f4f7fb;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      color: #ffffff;
+      padding: 72px 20px 56px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero .role {
+      font-size: clamp(16px, 3vw, 20px);
+      opacity: 0.92;
+      margin-bottom: 8px;
+    }
+
+    .hero .tagline {
+      font-size: 17px;
+      opacity: 0.85;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(30, 58, 138, 0.08);
+      padding: 32px;
+      margin: 28px auto;
+      max-width: 960px;
+      width: calc(100% - 40px);
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+    }
+
+    .about p {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .skill-card {
+      background: #f4f7fb;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .skill-card h3 {
+      font-size: 18px;
+      color: #1e3a8a;
+      margin-bottom: 6px;
+    }
+
+    .skill-card p {
+      font-size: 15px;
+      color: #52606d;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: #ffffff;
+      padding: 48px 32px;
+    }
+
+    .cta h2 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      font-size: 17px;
+      opacity: 0.92;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #1e3a8a;
+      font-weight: 700;
+      font-size: 17px;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 20px;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal {
+      background: #ffffff;
+      color: #1f2933;
+      border-radius: 12px;
+      padding: 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal h3 {
+      font-size: 22px;
+      color: #1e3a8a;
+      margin-bottom: 12px;
+    }
+
+    .modal .contact {
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .modal .contact a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .modal .close {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 12px 32px;
+      border-radius: 40px;
+      cursor: pointer;
+    }
+
+    .modal .close:hover {
+      background: #1e40af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 14px;
+      color: #52606d;
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 48px 16px 40px; }
+      section { padding: 24px; width: calc(100% - 24px); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Zidex</h1>
+    <div class="role">Оператор информационных систем и ресурсов</div>
+    <p class="tagline">Пробую себя в сфере IT-технологий. Создаю сайты и Telegram-ботов, работаю с Excel и Word.</p>
+  </header>
+
+  <section class="about">
+    <h2 class="section-title">Обо мне</h2>
+    <p>Меня зовут Zidex. Я пробую себя в сфере IT-технологий. По профессии я оператор информационных систем и ресурсов.</p>
+    <p>Умею создавать сайты, делать Telegram-ботов, работать с Excel и Word. Также являюсь уверенным пользователем ПК.</p>
+  </section>
+
+  <section class="skills">
+    <h2 class="section-title">Что я умею</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Сайты</h3>
+        <p>Вёрстка лендингов и сайтов-визиток на HTML</p>
+      </div>
+      <div class="skill-card">
+        <h3>Telegram-боты</h3>
+        <p>Создание ботов под задачи заказчика</p>
+      </div>
+      <div class="skill-card">
+        <h3>Excel и Word</h3>
+        <p>Обработка данных, таблицы, документы</p>
+      </div>
+      <div class="skill-card">
+        <h3>Уверенный пользователь ПК</h3>
+        <p>Системы, настройка, базовое администрирование</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Готов взяться за ваш проект</h2>
+    <p>Напишите мне — обсудим задачу и подберём решение.</p>
+    <a class="btn" href="#" id="contactBtn">Связаться со мной</a>
+  </section>
+
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal">
+      <h3>Мои контакты</h3>
+      <p class="contact">Telegram: <a href="https://t.me/dontswatpls">@dontswatpls</a></p>
+      <button class="close" id="closeModal">Закрыть</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Zidex · Разработка сайтов и Telegram-ботов</p>
+  </footer>
+
+  <script>
+    const modal = document.getElementById('contactModal');
+    const btn = document.getElementById('contactBtn');
+    const close = document.getElementById('closeModal');
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      modal.classList.add('show');
+    });
+
+    close.addEventListener('click', function () {
+      modal.classList.remove('show');
+    });
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        modal.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
